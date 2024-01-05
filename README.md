@@ -146,7 +146,7 @@ python inference.py --task Denoise  --model_path ../Task-pretrained_model/Denois
 
 ### Developable
 
-\1. Pre-training phase 
+1. Pre-training phase 
 
 A self-encoder network weight "pretrained_auto_en-de.pth" is obtained. Set the weight coefficient in "nntools.py", `weight_2 = 1.0,weight_4 = 0.0 `, run the following command:
 
@@ -154,7 +154,7 @@ A self-encoder network weight "pretrained_auto_en-de.pth" is obtained. Set the w
 python main.py --task Developable --root_dir ../Dataset  --output_dir ./pretrained/ --num_epochs 1000 --lr 1e-3 --batch_size 256
 ```
 
-\2. Optimize Gaussian curvature based on pre-training model 
+2. Optimize Gaussian curvature based on pre-training model 
 
 Set the loss weight in "nntools.py", `weight_2 = 1.0 * np. exp (-a * (epoch)/4000.0), weight_4 = 1.0 `, where a is the weight decay coefficient, Net-C and Net-F are set to 3 in the article, and 4 in the Net-S, run the command:
 
@@ -162,7 +162,7 @@ Set the loss weight in "nntools.py", `weight_2 = 1.0 * np. exp (-a * (epoch)/400
 python main.py --task Developable --root_dir ../Dataset --pretrain_model ./pretrained/pretrained_auto_en-de.pth --output_dir ../Developable/ --num_epochs 4000 --lr 1e-4 --batch_size 256
 ```
 
-\3. The Net-F model in the paper is a model that is retrained by using Dataset_opt2 on the dataset optimized by the Net-C model. The weight setting is consistent with the Net-C. The Dataset_opt2 dataset is obtained as follows:
+The Net-F model in the paper is a model that is retrained by using Dataset_opt2 on the dataset optimized by the Net-C model. The weight setting is consistent with the Net-C. The Dataset_opt2 dataset is obtained as follows:
 
 ```plain
 python construct_optdataset.py
