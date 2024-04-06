@@ -204,10 +204,13 @@ python evaluate_metric.py
 ## Ciation
 If the code is useful for your research, please consider citing:
 ```
-@inproceedings{wang2024GSO-Net,
+@inproceedings{wang2024gso,
   title={GSO-Net: Grid Surface Optimization via Learning Geometric Constraints},
-  author={Chaoyun Wang, Jingmin Xin, Nanning Zheng, Caigui Jiang},
-  journal={Proceedings of the AAAI Conference on Artificial Intelligence}, 
+  author={Wang, Chaoyun and Xin, Jingmin and Zheng, Nanning and Jiang, Caigui},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={38},
+  number={8},
+  pages={8163--8171},
   year={2024}
 }
 ```
